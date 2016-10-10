@@ -12,6 +12,7 @@
 		768243AE1DAC3C52008EC204 /* CGRect+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768243AD1DAC3C52008EC204 /* CGRect+Extensions.swift */; };
 		768243B11DAC3CE9008EC204 /* GKRandom+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768243B01DAC3CE9008EC204 /* GKRandom+Extensions.swift */; };
 		768243B41DAC3E5B008EC204 /* SCNVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768243B31DAC3E5B008EC204 /* SCNVector+Extensions.swift */; };
+		768243B71DAC4539008EC204 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768243B61DAC4539008EC204 /* Array+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		768243AD1DAC3C52008EC204 /* CGRect+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Extensions.swift"; sourceTree = "<group>"; };
 		768243B01DAC3CE9008EC204 /* GKRandom+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GKRandom+Extensions.swift"; sourceTree = "<group>"; };
 		768243B31DAC3E5B008EC204 /* SCNVector+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNVector+Extensions.swift"; sourceTree = "<group>"; };
+		768243B61DAC4539008EC204 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				768243A01DAC3A5E008EC204 /* Utilities.h */,
 				768243A11DAC3A5E008EC204 /* Info.plist */,
+				768243B51DAC452F008EC204 /* Foundation */,
 				768243A81DAC3A73008EC204 /* CoreGraphics */,
 				768243AF1DAC3CDF008EC204 /* GameplayKit */,
 				768243B21DAC3E52008EC204 /* SceneKit */,
@@ -86,6 +89,14 @@
 				768243B31DAC3E5B008EC204 /* SCNVector+Extensions.swift */,
 			);
 			path = SceneKit;
+			sourceTree = "<group>";
+		};
+		768243B51DAC452F008EC204 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				768243B61DAC4539008EC204 /* Array+Extensions.swift */,
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				768243AA1DAC3A87008EC204 /* CGPoint+Extensions.swift in Sources */,
+				768243B71DAC4539008EC204 /* Array+Extensions.swift in Sources */,
 				768243B11DAC3CE9008EC204 /* GKRandom+Extensions.swift in Sources */,
 				768243AE1DAC3C52008EC204 /* CGRect+Extensions.swift in Sources */,
 				768243B41DAC3E5B008EC204 /* SCNVector+Extensions.swift in Sources */,
