@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		768243A21DAC3A5E008EC204 /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 768243A01DAC3A5E008EC204 /* Utilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		768243AA1DAC3A87008EC204 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768243A91DAC3A87008EC204 /* CGPoint+Extensions.swift */; };
+		768243AE1DAC3C52008EC204 /* CGRect+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768243AD1DAC3C52008EC204 /* CGRect+Extensions.swift */; };
+		768243B11DAC3CE9008EC204 /* GKRandom+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768243B01DAC3CE9008EC204 /* GKRandom+Extensions.swift */; };
+		768243B41DAC3E5B008EC204 /* SCNVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768243B31DAC3E5B008EC204 /* SCNVector+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7682439D1DAC3A5E008EC204 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		768243A01DAC3A5E008EC204 /* Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		768243A11DAC3A5E008EC204 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		768243A91DAC3A87008EC204 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		768243AD1DAC3C52008EC204 /* CGRect+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Extensions.swift"; sourceTree = "<group>"; };
+		768243B01DAC3CE9008EC204 /* GKRandom+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GKRandom+Extensions.swift"; sourceTree = "<group>"; };
+		768243B31DAC3E5B008EC204 /* SCNVector+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNVector+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,8 +56,36 @@
 			children = (
 				768243A01DAC3A5E008EC204 /* Utilities.h */,
 				768243A11DAC3A5E008EC204 /* Info.plist */,
+				768243A81DAC3A73008EC204 /* CoreGraphics */,
+				768243AF1DAC3CDF008EC204 /* GameplayKit */,
+				768243B21DAC3E52008EC204 /* SceneKit */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		768243A81DAC3A73008EC204 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				768243A91DAC3A87008EC204 /* CGPoint+Extensions.swift */,
+				768243AD1DAC3C52008EC204 /* CGRect+Extensions.swift */,
+			);
+			path = CoreGraphics;
+			sourceTree = "<group>";
+		};
+		768243AF1DAC3CDF008EC204 /* GameplayKit */ = {
+			isa = PBXGroup;
+			children = (
+				768243B01DAC3CE9008EC204 /* GKRandom+Extensions.swift */,
+			);
+			path = GameplayKit;
+			sourceTree = "<group>";
+		};
+		768243B21DAC3E52008EC204 /* SceneKit */ = {
+			isa = PBXGroup;
+			children = (
+				768243B31DAC3E5B008EC204 /* SCNVector+Extensions.swift */,
+			);
+			path = SceneKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +132,7 @@
 					7682439C1DAC3A5E008EC204 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 86UU6J7RQ5;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -132,6 +169,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				768243AA1DAC3A87008EC204 /* CGPoint+Extensions.swift in Sources */,
+				768243B11DAC3CE9008EC204 /* GKRandom+Extensions.swift in Sources */,
+				768243AE1DAC3C52008EC204 /* CGRect+Extensions.swift in Sources */,
+				768243B41DAC3E5B008EC204 /* SCNVector+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +281,7 @@
 		768243A61DAC3A5E008EC204 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 86UU6J7RQ5;
@@ -252,6 +294,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.FredrikSjoberg.KnightsFee.Utilities;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -259,6 +302,7 @@
 		768243A71DAC3A5E008EC204 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 86UU6J7RQ5;
