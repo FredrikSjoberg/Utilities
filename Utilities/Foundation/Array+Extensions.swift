@@ -18,6 +18,20 @@ extension Array where Element: Hashable {
     }
 }
 
+extension Sequence {
+    public func prefix(while predicate: @escaping (Self.Iterator.Element) -> Bool) -> [Self.Iterator.Element] {
+        var total: [Self.Iterator.Element] = []
+        for e in self {
+            if predicate(e) {
+                total.append(e)
+            }
+            else {
+                return total
+            }
+        }
+        return total
+    }
+}
 /*extension Sequence {
     ///
     /// let test = [2, 3, 1, 4, 5, 6]
@@ -71,19 +85,19 @@ private struct TakeWhile<S: Sequence>: Sequence {
     }
 }
 
-private struct TakeUntil<S: SequenceType>: SequenceType {
+private struct TakeUntil<S: Sequence>: Sequence {
     let seq: S
-    let block: (S.Generator.Element) -> Bool
+    let block: (S.Iterator.Element) -> Bool
     
-    init(_ seq: S, block: (S.Generator.Element) -> Bool) {
+    init(_ seq: S, block: @escaping (S.Iterator.Element) -> Bool) {
         self.seq = seq
         self.block = block
     }
     
-    func generate() -> AnyGenerator<S.Generator.Element> {
-        var gen = seq.generate()
+    func generate() -> AnyIterator<S.Iterator.Element> {
+        var gen = seq.makeIterator()
         var completed: Bool = false
-        return anyGenerator{
+        return AnyIterator{
             if completed { return nil }
             if let element = gen.next() {
                 if self.block(element) {
