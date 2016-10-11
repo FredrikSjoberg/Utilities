@@ -14,39 +14,39 @@ public class Lineage<Element: Hashable> {
     private weak var parent: Lineage?
     private var children: Set<Lineage>
     
-    convenience init(element: Element) {
+    public convenience init(element: Element) {
         self.init(element: element, parent: nil)
     }
     
-    init(element: Element, parent: Lineage?) {
+    public init(element: Element, parent: Lineage?) {
         self.element = element
         self.parent = parent
         children = Set()
     }
     
-    var isLeaf: Bool {
+    public var isLeaf: Bool {
         return children.isEmpty
     }
     
-    var isOrigin: Bool {
+    public var isOrigin: Bool {
         return parent == nil ? true : false
     }
     
-    func contains(element: Element) -> Bool {
+    public func contains(element: Element) -> Bool {
         guard node(for: element) != nil else {
             return false
         }
         return true
     }
     
-    func link(parent: Element, child: Element) {
+    public func link(parent: Element, child: Element) {
         guard let node = node(for: parent) else { return }
         node.children.insert(Lineage(element: child, parent: node))
     }
     
     /// Removes 'element' from the Lineage
     /// If 'repair' == true, transfers all children of 'element' to 'element.parent
-    func unlink(element: Element, repair: Bool = false) -> Element? {
+    public func unlink(element: Element, repair: Bool = false) -> Element? {
         guard let node = node(for: element) else { return nil }
         node.parent?.children.remove(node)
         
@@ -61,7 +61,7 @@ public class Lineage<Element: Hashable> {
     }
     
     /// Truncates 'element' if it is a leaf
-    func prune(element: Element) -> Element? {
+    public func prune(element: Element) -> Element? {
         guard let node = node(for: element) else { return nil }
         guard node.isLeaf else { return nil }
         node.parent?.children.remove(node)
@@ -71,7 +71,7 @@ public class Lineage<Element: Hashable> {
     }
     
     /// Path is from 'element' -> 'root'
-    func rootPath(from element: Element) -> [Element] {
+    public func rootPath(from element: Element) -> [Element] {
         guard let node = node(for: element) else { return [] }
         if node.isOrigin { return [node.element] }
         
@@ -84,7 +84,7 @@ public class Lineage<Element: Hashable> {
         return result
     }
     
-    var leaves: [Element] {
+    public var leaves: [Element] {
         if isLeaf { return [element] }
         return children.flatMap{ $0.leaves }
     }
