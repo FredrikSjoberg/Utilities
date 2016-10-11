@@ -136,7 +136,7 @@ public func / (left: CGPoint, scalar: Float) -> CGPoint {
 
 import GameplayKit
 extension CGPoint {
-    init(random: GKRandom, interval: ClosedRange<Float>) {
+    public init(random: GKRandom, interval: ClosedRange<Float>) {
         x = CGFloat(random.nextUniform(interval: interval))
         y = CGFloat(random.nextUniform(interval: interval))
     }
