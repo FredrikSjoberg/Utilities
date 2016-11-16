@@ -64,22 +64,6 @@ extension CGPoint {
     public func onBorder(rect: CGRect) -> Bool {
         return (x == rect.origin.x || x == rect.origin.x + rect.size.width || y == rect.origin.y || y == rect.origin.y + rect.size.height)
     }
-    
-    public func closerThan(dist: CGFloat, to point: CGPoint) -> (CGPoint, CGFloat) {
-        let selfDist = distance(point)
-        if selfDist < dist {
-            return (self, selfDist)
-        }
-        return (point, dist)
-    }
-    
-    public func closestCornerTo(rect: CGRect) -> CGPoint {
-        var shortest = (rect.origin, distance(rect.origin))
-        shortest = closerThan(dist: shortest.1, to: rect.topLeft)
-        shortest = closerThan(dist: shortest.1, to: rect.topRight)
-        shortest = closerThan(dist: shortest.1, to: rect.bottomRight)
-        return shortest.0
-    }
 }
 
 // Add

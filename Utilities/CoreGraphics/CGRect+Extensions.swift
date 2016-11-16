@@ -7,17 +7,3 @@
 //
 
 import CoreGraphics
-
-extension CGRect {
-    public var topLeft: CGPoint {
-        return CGPoint(x: origin.x, y: origin.y+size.height)
-    }
-    
-    public var topRight: CGPoint {
-        return CGPoint(x: origin.x+size.width, y: origin.y+size.height)
-    }
-    
-    public var bottomRight: CGPoint {
-        return CGPoint(x: origin.x+size.width, y: origin.y)
-    }
-}
