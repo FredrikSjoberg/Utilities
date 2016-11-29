@@ -31,6 +31,17 @@ extension Sequence {
         }
         return total
     }
+    
+    public func take(until predicate: @escaping (Self.Iterator.Element) -> Bool) -> [Self.Iterator.Element] {
+        var total: [Self.Iterator.Element] = []
+        for e in self {
+            total.append(e)
+            if predicate(e) {
+                return total
+            }
+        }
+        return total
+    }
 }
 /*extension Sequence {
     ///
