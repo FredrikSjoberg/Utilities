@@ -7,11 +7,21 @@
 		<key>Utilities.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>0</integer>
+		</dict>
+		<key>UtilitiesTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>7647DD811E09276500C5B3E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7682439C1DAC3A5E008EC204</key>
 		<dict>
 			<key>primary</key>

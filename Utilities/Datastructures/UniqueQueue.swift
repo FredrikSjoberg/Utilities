@@ -68,9 +68,15 @@ extension UniqueQueue : Collection {
 
 extension UniqueQueue : ExpressibleByArrayLiteral {
     public init(arrayLiteral elements: Element...) {
-        uniques = Set(elements)
-        contents = []
-        contents += elements.filter{ uniques.contains($0) }
+        var set = Set(elements)
+        uniques = set
+        contents = elements.filter{
+            if set.contains($0) {
+                set.remove($0)
+                return true
+            }
+            return false
+        }
     }
 }
 
