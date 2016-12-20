@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7647DD7B1E09274F00C5B3E2 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7647DD791E09274F00C5B3E2 /* Nimble.framework */; };
-		7647DD7C1E09274F00C5B3E2 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7647DD7A1E09274F00C5B3E2 /* Quick.framework */; };
 		7647DD871E09276500C5B3E2 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7682439D1DAC3A5E008EC204 /* Utilities.framework */; };
 		7647DD8D1E09277400C5B3E2 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7647DD791E09274F00C5B3E2 /* Nimble.framework */; };
 		7647DD8E1E09277400C5B3E2 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7647DD7A1E09274F00C5B3E2 /* Quick.framework */; };
@@ -116,8 +114,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7647DD7C1E09274F00C5B3E2 /* Quick.framework in Frameworks */,
-				7647DD7B1E09274F00C5B3E2 /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,6 +620,7 @@
 				7647DD8C1E09276500C5B3E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		768243971DAC3A5E008EC204 /* Build configuration list for PBXProject "Utilities" */ = {
 			isa = XCConfigurationList;
