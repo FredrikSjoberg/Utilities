@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7647DD7B1E09274F00C5B3E2 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7647DD791E09274F00C5B3E2 /* Nimble.framework */; };
 		7647DD7C1E09274F00C5B3E2 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7647DD7A1E09274F00C5B3E2 /* Quick.framework */; };
-		7647DD851E09276500C5B3E2 /* UtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7647DD841E09276500C5B3E2 /* UtilitiesTests.swift */; };
 		7647DD871E09276500C5B3E2 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7682439D1DAC3A5E008EC204 /* Utilities.framework */; };
 		7647DD8D1E09277400C5B3E2 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7647DD791E09274F00C5B3E2 /* Nimble.framework */; };
 		7647DD8E1E09277400C5B3E2 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7647DD7A1E09274F00C5B3E2 /* Quick.framework */; };
@@ -70,7 +69,6 @@
 		7647DD791E09274F00C5B3E2 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		7647DD7A1E09274F00C5B3E2 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		7647DD821E09276500C5B3E2 /* UtilitiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilitiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7647DD841E09276500C5B3E2 /* UtilitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitiesTests.swift; sourceTree = "<group>"; };
 		7647DD861E09276500C5B3E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7647DD981E09296200C5B3E2 /* HeapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeapTests.swift; sourceTree = "<group>"; };
 		7647DD9A1E092B7800C5B3E2 /* LineageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineageTests.swift; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 		7647DD831E09276500C5B3E2 /* UtilitiesTests */ = {
 			isa = PBXGroup;
 			children = (
-				7647DD841E09276500C5B3E2 /* UtilitiesTests.swift */,
 				7647DD861E09276500C5B3E2 /* Info.plist */,
 				7647DD931E09295800C5B3E2 /* CoreGraphics */,
 				7647DD941E09295800C5B3E2 /* Datastructures */,
@@ -389,7 +386,6 @@
 				7647DD9F1E0936E100C5B3E2 /* UniqueQueueTests.swift in Sources */,
 				7647DDA31E09422800C5B3E2 /* ArrayTests.swift in Sources */,
 				7647DD9B1E092B7800C5B3E2 /* LineageTests.swift in Sources */,
-				7647DD851E09276500C5B3E2 /* UtilitiesTests.swift in Sources */,
 				7647DDA51E09503800C5B3E2 /* FloatTests.swift in Sources */,
 				7647DD991E09296200C5B3E2 /* HeapTests.swift in Sources */,
 				7647DDA11E093A4A00C5B3E2 /* CGPointTests.swift in Sources */,
