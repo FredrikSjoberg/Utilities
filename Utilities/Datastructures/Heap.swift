@@ -67,7 +67,7 @@ extension Heap {
     }
 }
 
-extension Heap : QueueType {
+extension Heap : DynamicQueueType {
     public mutating func push(element: Element) {
         contents.append(element)
         
@@ -89,7 +89,7 @@ extension Heap : QueueType {
         return contents.first
     }
     
-    mutating func invalidate(element: Element) {
+    public mutating func invalidate(element: Element) {
         guard !contents.isEmpty else { return }
         guard let index = contents.index(of: element) else { return }
         let endIndex = contents.endIndex - 1
