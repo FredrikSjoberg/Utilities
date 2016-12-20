@@ -9,8 +9,16 @@
 import Foundation
 
 extension Array where Element: Hashable {
-    public func unique() -> [Element] {
-        return Array(Set(self))
+    public func unique(preserveOrder: Bool = false) -> [Element] {
+        guard preserveOrder else { return Array(self.set()) }
+        var set = Set(self)
+        return self.filter{
+            if set.contains($0) {
+                set.remove($0)
+                return true
+            }
+            return false
+        }
     }
     
     public func set() -> Set<Element> {
