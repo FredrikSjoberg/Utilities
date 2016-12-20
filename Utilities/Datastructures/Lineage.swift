@@ -26,7 +26,7 @@ public class Lineage<Element: Hashable> {
     public func prune(element: Element) {
         guard let root = self.root else { return }
         guard let present = root.node(for: element) else { return }
-        guard let replacement = present.prune(element: element) else { return }
+        guard let _ = present.prune(element: element) else { return }
         if present === root {
             self.root = nil
         }
@@ -48,45 +48,45 @@ public class Lineage<Element: Hashable> {
     }
 }
 
-public class LineageNode<Element: Hashable> {
+internal class LineageNode<Element: Hashable> {
     let element: Element
     
     private weak var parent: LineageNode?
     private var children: Set<LineageNode>
     
-    public convenience init(element: Element) {
+    internal convenience init(element: Element) {
         self.init(element: element, parent: nil)
     }
     
-    public init(element: Element, parent: LineageNode?) {
+    internal init(element: Element, parent: LineageNode?) {
         self.element = element
         self.parent = parent
         children = Set()
     }
     
-    public var isLeaf: Bool {
+    internal var isLeaf: Bool {
         return children.isEmpty
     }
     
-    public var isOrigin: Bool {
+    internal var isOrigin: Bool {
         return parent == nil ? true : false
     }
     
-    public func contains(element: Element) -> Bool {
+    internal func contains(element: Element) -> Bool {
         guard node(for: element) != nil else {
             return false
         }
         return true
     }
     
-    public func link(parent: Element, child: Element) {
+    internal func link(parent: Element, child: Element) {
         guard let node = node(for: parent) else { return }
         node.children.insert(LineageNode(element: child, parent: node))
     }
     
-    /// Removes 'element' from the Lineage
+    /*/// Removes 'element' from the Lineage
     /// If 'repair' == true, transfers all children of 'element' to 'element.parent
-    public func unlink(element: Element, repair: Bool = false) -> Element? {
+    internal func unlink(element: Element, repair: Bool = false) -> Element? {
         guard let node = node(for: element) else { return nil }
         node.parent?.children.remove(node)
         
@@ -98,20 +98,20 @@ public class LineageNode<Element: Hashable> {
         node.parent = nil
         
         return node.element
-    }
+    }*/
     
     /// Truncates 'element' if it is a leaf
-    public func prune(element: Element) -> LineageNode<Element>? {
+    internal func prune(element: Element) -> LineageNode<Element>? {
         guard let node = node(for: element) else { return nil }
         guard node.isLeaf else { return nil }
-        node.parent?.children.remove(node)
+        let _ = node.parent?.children.remove(node)
         node.parent = nil
         
         return node
     }
     
     /// Path is from 'element' -> 'root'
-    public func rootPath(from element: Element) -> [Element] {
+    internal func rootPath(from element: Element) -> [Element] {
         guard let node = node(for: element) else { return [] }
         if node.isOrigin { return [node.element] }
         
@@ -124,7 +124,7 @@ public class LineageNode<Element: Hashable> {
         return result
     }
     
-    public var leaves: [Element] {
+    internal var leaves: [Element] {
         if isLeaf { return [element] }
         return children.flatMap{ $0.leaves }
     }
@@ -142,11 +142,11 @@ public class LineageNode<Element: Hashable> {
 }
 
 extension LineageNode : Hashable {
-    public var hashValue: Int {
+    internal var hashValue: Int {
         return element.hashValue
     }
 }
 
-public func == <T: Hashable>(lhs: LineageNode<T>, rhs: LineageNode<T>) -> Bool {
+internal func == <T: Hashable>(lhs: LineageNode<T>, rhs: LineageNode<T>) -> Bool {
     return lhs.element == rhs.element
 }
